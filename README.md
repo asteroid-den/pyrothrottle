@@ -43,17 +43,17 @@ def fallback_handler(c: Client, m: Message):
 First of all, I have to mention that package has two implementations (each was shown in _Quickstart_ section), so, each type of antispam system would have two equal named classes, one in `.filters` subpackage, and one in `.decorators` subpackage.  
 Also, for convinient usage, every class (when package is initialised) named in snake case (**_But in declaration they're named in camel case as it should be_**). So, in documentation they will be named as usual classes (for example, `PersonalDebounce`), but in code you have to use snake case names (for example, `personal_debounce`).  
 
-> Meaningful part
+> Meaningful part  
 In order to choice right system, you just need to undestand 5 terms.
-- Global
+- Global  
 `Global` in class name means that chosen system would have common for all users counter.
-- Personal
+- Personal  
 `Personal` in class name means that chosen system would have separate counters for each user.  
-- Throttle
+- Throttle  
 `Throttle` system counts interval between **now** and **last processed** (not **last received**) event. If this interval equals to or greater than given, event would be processed. Only `interval` is mandatory parameter.
-- Debounce
+- Debounce  
 `Debounce` system counts interval between **now** and **last received** event. If this interval equals to or greater than given, event would be processed. Only `interval` is mandatory parameter.
-- ReqrateController
+- ReqrateController  
 `ReqrateController` system counts, how many events were processed for last interval of time with length of provided **interval** (from some time point till **now**). If amount of processed events less than given allowed **amount**, event would be processed. Have 2 mandatory parameters: `interval` and `amount`.  
 
 In every class name first goes scope (`Global` or `Personal`), and then technique name (for example, `PersonalDebounce`). 

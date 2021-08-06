@@ -7,7 +7,7 @@ with open("requirements.txt", encoding="utf-8") as f:
     requires = f.read().split()
 
 setuptools.setup(
-    name="mysqlite",
+    name="pyrothrottle",
     version="0.1",
     author="asteroid_den",
     author_email="denbartolomee@gmail.com",
