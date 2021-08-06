@@ -43,7 +43,8 @@ def fallback_handler(c: Client, m: Message):
 First of all, I have to mention that package has two implementations (each was shown in _Quickstart_ section), so, each type of antispam system would have two equal named classes, one in `.filters` subpackage, and one in `.decorators` subpackage.  
 Also, for convinient usage, every class (when package is initialised) named in snake case (**_But in declaration they're named in camel case as it should be_**). So, in documentation they will be named as usual classes (for example, `PersonalDebounce`), but in code you have to use snake case names (for example, `personal_debounce`).  
 
-> Meaningful part  
+> Meaningful part
+
 In order to choice right system, you just need to undestand 5 terms.
 - Global  
 `Global` in class name means that chosen system would have common for all users counter.
