@@ -6,7 +6,7 @@ Throttle and debounce add-on for Pyrogram
 ```python3
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from pyro throttle.decorators import personal_throttle
+from pyrothrottle.decorators import personal_throttle
 
 client = Client('client')
 
@@ -116,7 +116,7 @@ def fallback_handler(c: Client, e: Event):
     ...
 ```
 
-**Please note**: `Event` object (i.e. `Message`, `CallbackQuery` or `InlineQuery`) are patched, so they have have attribute `request_info` with usefull info (more on `RequestInfo` class later).  
+**Please note**: `Event` objects (i.e. `Message`, `CallbackQuery` or `InlineQuery`) are patched, so they have have attribute `request_info` with usefull info (more on `RequestInfo` class later).  
 
 ### Filters
 First of all, I have to mention that filter itself contained in `filter` attribute.
@@ -154,7 +154,7 @@ def handler(c: Client, e: Event):
     ...
 ```
 
-**Please note**: `Event` object (i.e. `Message`, `CallbackQuery` or `InlineQuery`) are patched, so they have attribute `request_info` with usefull info (more on `RequestInfo` class later).  
+**Please note**: `Event` objects (i.e. `Message`, `CallbackQuery` or `InlineQuery`) are patched, so they have attribute `request_info` with usefull info (more on `RequestInfo` class later).  
 
 ### RequestInfo
 So, as it was mentioned before, all incoming events are patched, so they have attribute `request_info` with `RequestInfo` instance.
