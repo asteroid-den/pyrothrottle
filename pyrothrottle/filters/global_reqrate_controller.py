@@ -1,5 +1,5 @@
 from typing import Optional, Union, Callable
-from time import time
+from time import monotonic
 from itertools import dropwhile
 
 from pyrogram import Client
@@ -12,7 +12,7 @@ from ..request_info import RequestInfo
 class GlobalReqrateController(FiltersBase, ReqrateBase):
 
     def __call__(self, client: Client, event: Event) -> bool:
-        now = time()
+        now = monotonic()
         interval = self.get_interval()
         amount = self.get_amount()
 

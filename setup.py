@@ -8,7 +8,7 @@ with open("requirements.txt", encoding="utf-8") as f:
 
 setuptools.setup(
     name="pyrothrottle",
-    version="0.1",
+    version="0.1.1",
     author="asteroid_den",
     author_email="denbartolomee@gmail.com",
     description="Throttle and debounce add-ons for Pyrogram",

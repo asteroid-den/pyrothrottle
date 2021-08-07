@@ -1,4 +1,4 @@
-from time import time
+from time import monotonic
 
 from pyrogram import Client
 
@@ -9,7 +9,7 @@ from ..request_info import RequestInfo
 class GlobalThrottle(FiltersBase):
 
     def __call__(self, client: Client, event: Event) -> bool:
-        now = time()
+        now = monotonic()
         interval = self.get_interval()
 
         passed_enough = now >= self.last_processed + interval

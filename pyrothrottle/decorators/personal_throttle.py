@@ -1,5 +1,5 @@
 from typing import Optional
-from time import time
+from time import monotonic
 
 from ..base import Base
 from ..request_info import RequestInfo
@@ -8,7 +8,7 @@ class PersonalThrottle(Base):
 
     def __call__(self, *args) -> Optional['PersonalThrottle']:
         if self.callable:
-            now = time()
+            now = monotonic()
             client, event = args
             uid = event.from_user.id
             interval = self.get_interval(uid)

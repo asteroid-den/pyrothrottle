@@ -1,5 +1,5 @@
 from typing import Optional, Union, Callable
-from time import time
+from time import monotonic
 from itertools import dropwhile
 
 from pyrogram import Client
@@ -12,7 +12,7 @@ class PersonalReqrateController(ReqrateBase):
 
     def __call__(self, *args) -> Optional['PersonalReqrateController']:
         if self.callable:
-            now = time()
+            now = monotonic()
             client, event = args
             uid = event.from_user.id
             interval = self.get_interval(uid)

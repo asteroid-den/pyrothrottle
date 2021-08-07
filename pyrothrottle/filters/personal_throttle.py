@@ -1,4 +1,4 @@
-from time import time
+from time import monotonic
 
 from pyrogram import Client
 
@@ -10,7 +10,7 @@ class PersonalThrottle(FiltersBase):
 
     def __call__(self, client: Client, event: Event) -> bool:
         uid = event.from_user.id
-        now = time()
+        now = monotonic()
         interval = self.get_interval(uid)
         last_processed = self.last_processed.setdefault(uid, 0)
 
