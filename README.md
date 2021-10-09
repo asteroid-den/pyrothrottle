@@ -1,6 +1,8 @@
 # pyrothrottle
 Throttle and debounce add-on for Pyrogram  
 
+**⚠️ UNDER HEAVY MAINTENANCE ⚠️**  
+
 ## Quickstart
 > implementation on decorators
 ```python3
