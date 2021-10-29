@@ -1,14 +1,14 @@
 from typing import Union, List, Optional
 from dataclasses import dataclass, field
-from time import time
-from datetime import datetime
+
+from .types import Number
 
 @dataclass
 class RequestInfo:
     time: float
     last_processed: Union[float, List[float]]
     next_successful: float
-    interval: Union[float, int] = field(repr=False)
+    interval: Number = field(repr=False)
     amount: Optional[int] = field(default=None, repr=False)
 
     @property

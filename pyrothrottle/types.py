@@ -1,7 +1,8 @@
 from typing import Union
 
 from pyrogram.types import Message, CallbackQuery, InlineQuery
+from pyrogram import Client, filters
 
 Event = Union[Message, CallbackQuery, InlineQuery]
 
-get_modulename = lambda n: n.split('.')[-1]
+Number = Union[int, float]
